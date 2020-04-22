@@ -5,3 +5,10 @@
    
   roles:
    - prod
+
+- name: start boxfuse
+  hosts: webs
+  become: yes
+  
+  roles:
+  - web
