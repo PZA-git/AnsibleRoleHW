@@ -1,1 +1,7 @@
 ---
+- name: clone git and create war file
+  hosts: prods
+  become: yes
+   
+  roles:
+   - prod
