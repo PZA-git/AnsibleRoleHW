@@ -1,2 +1,22 @@
 ---
 # tasks file for prod
+- name: install git
+  apt:
+   name: git
+   state: present
+  
+- name: install maven 
+  apt:
+   name: maven
+   state: present
+
+- name: copy boxfuse from github
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+    dest: {{dest folder}}/myapp
+
+- name: Compile war file
+  shell: "mvn package"
+    args:
+    chdir: {{dest folder}} /myapp
+    
