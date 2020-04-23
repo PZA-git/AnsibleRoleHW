@@ -7,7 +7,7 @@
     - maven
 
 - name: copy boxfuse from github
-  git: repo=https://github.com/boxfuse/boxfuse-sample-java-war-hello.git dest={{ dest_folder }}
+  git: repo={{ rep }} dest={{ dest_folder }}
 
 - name: Compile war file
   shell: "mvn package"
